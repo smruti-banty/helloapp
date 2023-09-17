@@ -1,6 +1,3 @@
-# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
-# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
-
 name: Hello app Package
 
 on:
@@ -31,3 +28,9 @@ jobs:
     - name: Rename artifact
       run: |
         cp target/*.jar hello-app.jar
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: hello-app-artifact
+        path: hello-app.jar
