@@ -27,7 +27,7 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-      
+
     - name: Rename artifact
-    - run: cp target/*.jar hello-app.jar
-  
+      run: |
+        cp target/*.jar hello-app.jar
