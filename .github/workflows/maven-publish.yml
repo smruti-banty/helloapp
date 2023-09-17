@@ -31,6 +31,9 @@ jobs:
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
+      env:
+        NODE_VERSION: 18
       with:
         name: hello-app-artifact
         path: hello-app.jar
+
